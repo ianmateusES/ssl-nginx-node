@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  certbot:
+    image: certbot/certbot:latest
+    container_name: certbot
+    volumes:
+      - ./certbot/www/:/tmp/letsencrypt/:rw
+      - ./certbot/letsencrypt/:/etc/letsencrypt/:rw
+      - ./certbot/log/:/var/log/:rw
+    command: certonly --webroot -w /tmp/letsencrypt/ --force-renewal --email {email} -d {domain} --agree-tos

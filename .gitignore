@@ -1,0 +1,7 @@
+certbot/letsencrypt/*
+certbot/www/*
+
+!certbot/letsencrypt/.gitkeep
+!certbot/www/.gitkeep
+
+backend/node_modules
